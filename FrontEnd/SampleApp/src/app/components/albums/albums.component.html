@@ -1,0 +1,22 @@
+<div class="grid grid-pad">
+
+  <a *ngFor="let photo of photos">
+    <div class="col-1-4"
+         [class.selected] ="photo === selction"
+         (click) = "onSelect(photo)">
+
+      <img src="{{photo.thumbnailUrl}}}" >
+
+
+    </div>
+  </a>
+</div>
+
+<div *ngIf ="selectedAlbum">
+  <h4>All the Albums within {{selction.id}} </h4>
+  <ul *ngFor ="let track of selectedAlbum">
+    <img  src = "{{track}}">
+  </ul>
+
+</div>
+

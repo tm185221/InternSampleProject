@@ -1,0 +1,21 @@
+<h2>Users</h2>
+
+<ul class = "users">
+
+  <li *ngFor="let user of users"
+    [class.selected] ="user === selectedUser"
+    (click) = "onSelect(user)">
+    <span class="badge">{{user.name}}</span>
+
+  </li>
+
+
+</ul>
+
+ <div *ngIf ="selectedUser">
+  <h4>Best of {{selectedUser.name}} </h4>
+  <ul *ngFor ="let track of selectedAlbum">
+    {{track}}
+  </ul>
+
+</div>
